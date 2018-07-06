@@ -5,6 +5,13 @@
 --%>
 
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="utf-8"%>
-<%@include file="includes/header.jsp"%>
-<h1>Hello ${name}</h1>
-<%@include file="includes/footer.jsp"%>
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+		<title>Hello World</title>
+    </head>
+
+    <body>
+		<h1>Hello World !!! ...</h1>
+    </body>
+</html>
