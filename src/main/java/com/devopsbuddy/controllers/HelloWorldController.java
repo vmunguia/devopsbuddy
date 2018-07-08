@@ -20,8 +20,8 @@ public class HelloWorldController {
      * @param model
      * @return 
      */
-    @RequestMapping("/")
+    @RequestMapping("/helloworld")
     public String sayHello() {
-        return "index";
+        return "helloworld";
     }
 }

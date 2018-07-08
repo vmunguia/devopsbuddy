@@ -1,3 +1,4 @@
 com\devopsbuddy\ServletInitializer.class
 com\devopsbuddy\controllers\HelloWorldController.class
 com\devopsbuddy\DevOpsBuddyApplication.class
+com\devopsbuddy\web\controllers\IndexController.class
