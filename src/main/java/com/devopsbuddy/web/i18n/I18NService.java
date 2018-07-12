@@ -31,7 +31,7 @@ public class I18NService {
 	public String getMessage(String messageID) {
 		Locale locale = LocaleContextHolder.getLocale();
 
-		LOG.warn("Returning i18n text for messageID {}", messageID);
+		LOG.info("Returning i18n text for messageID {}", messageID);
 
 		return getMessage(messageID, locale);
 	}
