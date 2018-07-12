@@ -1,4 +1,6 @@
 D:\proyectos\spring tool suite\devopsbuddy\src\main\java\com\devopsbuddy\ServletInitializer.java
 D:\proyectos\spring tool suite\devopsbuddy\src\main\java\com\devopsbuddy\DevOpsBuddyApplication.java
+D:\proyectos\spring tool suite\devopsbuddy\src\main\java\com\devopsbuddy\config\I18nConfig.java
 D:\proyectos\spring tool suite\devopsbuddy\src\main\java\com\devopsbuddy\web\controllers\IndexController.java
 D:\proyectos\spring tool suite\devopsbuddy\src\main\java\com\devopsbuddy\controllers\HelloWorldController.java
+D:\proyectos\spring tool suite\devopsbuddy\src\main\java\com\devopsbuddy\web\i18n\I18NService.java

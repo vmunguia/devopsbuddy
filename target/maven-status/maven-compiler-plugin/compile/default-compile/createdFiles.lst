@@ -1,4 +1,6 @@
-com\devopsbuddy\ServletInitializer.class
 com\devopsbuddy\controllers\HelloWorldController.class
 com\devopsbuddy\DevOpsBuddyApplication.class
 com\devopsbuddy\web\controllers\IndexController.class
+com\devopsbuddy\ServletInitializer.class
+com\devopsbuddy\config\I18nConfig.class
+com\devopsbuddy\web\i18n\I18NService.class
