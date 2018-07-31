@@ -1,6 +1,14 @@
-com\devopsbuddy\controllers\HelloWorldController.class
+com\devopsbuddy\backend\service\AbstractEmailService.class
 com\devopsbuddy\DevOpsBuddyApplication.class
+com\devopsbuddy\web\controllers\ContactController.class
+com\devopsbuddy\web\domian\frontend\FeedbackPojo.class
 com\devopsbuddy\web\controllers\IndexController.class
-com\devopsbuddy\ServletInitializer.class
+com\devopsbuddy\backend\service\MockEmailService.class
 com\devopsbuddy\config\I18nConfig.class
 com\devopsbuddy\web\i18n\I18NService.class
+com\devopsbuddy\config\DevelopmentConfig.class
+com\devopsbuddy\controllers\HelloWorldController.class
+com\devopsbuddy\config\ProductionConfiguration.class
+com\devopsbuddy\web\controllers\CopyController.class
+com\devopsbuddy\backend\service\EmailService.class
+com\devopsbuddy\ServletInitializer.class

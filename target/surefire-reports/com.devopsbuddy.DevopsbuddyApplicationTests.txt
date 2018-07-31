@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: com.devopsbuddy.DevopsbuddyApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.157 s - in com.devopsbuddy.DevopsbuddyApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.798 s <<< FAILURE! - in com.devopsbuddy.DevopsbuddyApplicationTests
+testMessageByLocaleService(com.devopsbuddy.DevopsbuddyApplicationTests)  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'contactController': Unsatisfied dependency expressed through field 'emailService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.devopsbuddy.backend.service.EmailService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.devopsbuddy.backend.service.EmailService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+
