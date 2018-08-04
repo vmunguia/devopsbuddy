@@ -26,7 +26,6 @@
         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
             <maxFileSize>5MB</maxFileSize>
         </triggeringPolicy>
-
         <encoder>
             <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
         </encoder>
@@ -38,7 +37,7 @@
     <logger name="org.hibernate" level="warn" />
     <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="warn" />
     <logger name="org.springframework.web" level="info" />
-    <logger name="org.springframework.security" level="info" />
+    <logger name="org.springframework.security" level="debug" />
 
     <root level="warn">
         <appender-ref ref="CONSOLE" />

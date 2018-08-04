@@ -2,9 +2,8 @@ Manifest-Version: 1.0
 Implementation-Title: devopsbuddy
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: munga
-Implementation-Vendor-Id: devopsbuddy
+Implementation-Vendor-Id: com.devopsbuddy
 Build-Jdk: 1.8.0_181
-Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/devopsbuddy
 Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
 

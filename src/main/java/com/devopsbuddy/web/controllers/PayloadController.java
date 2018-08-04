@@ -4,25 +4,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * 
- * @author munga
- *
+ * Created by tedonema on 25/03/2016.
  */
 @Controller
 public class PayloadController {
 
-	/**
-	 * The payload view name
-	 */
-	public static final String PAYLOAD_VIEW_NAME = "payload/payload";
+    public static final String PAYLOAD_VIEW_NAME = "payload/payload";
 
-	/**
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/payload")
-	public String payload() {
-		return PAYLOAD_VIEW_NAME;
-	}
-
+    @RequestMapping("/payload")
+    public String payload() {
+        return PAYLOAD_VIEW_NAME;
+    }
 }

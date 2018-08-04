@@ -1,117 +1,119 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-	<!-- common/header: HTML page name and path -->
-	<!-- common-header: fragment name -->
-	<!-- all locations are relative to the path: src/main/resources/templates -->
-	<head th:replace="common/header :: common-header" />
 
-	<body>
-		<!-- this is the nav bar -->
-		<div th:replace="common/navbar :: common-navbar" />
+<head th:replace="common/header :: common-header" />
 
-		<!-- Main Jumbotron
-		================================================= -->
-		<!-- Wrap the rest of the page in another container to center all the content. -->
-		
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class=jumbotron>
-						<h1 class="text-center" th:text="#{copy.h1.text}"></h1>
-						<p class="lead" th:text="#{copy.p.lead}"></p>
-					</div>
-				</div>
-			</div>
-		</div> <!-- ./container -->
+<body>
 
-		<!-- Marketing messaging for featurettes
-		================================================= -->
-		<!-- Wrap the rest of the page in another container to center all the content. -->
-		<div class="container marketing">
+    <div th:replace="common/navbar :: common-navbar" />
 
-        	<!-- Three columns of text below the carousel -->
-        	<div class="row">
-            	<div class="col-lg-4 span4">
-                	<a href="#">
-                    	<img class="img-circle"
-                        	th:src="@{/images/me.jpg}"
-                         	alt="Victor H Munguia" width="150" height="200" />
-                	</a>
-                	<h2>Victor H Munguia <small class="member-title">Project Lead</small></h2>
-                	<div class="span4 collapse-group">
-                    	<p class="collapse text-justify" th:text="#{copy.project.lead.intro}"></p>
-                    	<p><a class="btn btn-primary btn-collapse" href="#" role="button" th:text="#{copy.viewdetails.button}"></a></p>
-                	</div>
-            	</div><!-- /.col-lg-4 -->
-            	<div class="col-lg-4 span4">
-                	<a href="#">
-                    	<img class="img-circle"
-                        	 th:src="@{/images/me.jpg}"
-                         	alt="Victor H Munguia" width="150" height="200" />
-                	</a>
-                	<h2>Victor H Munguia <small class="member-title">Project Lead</small></h2>
-                	<div class="span4 collapse-group">
-                    	<p class="collapse text-justify" th:text="#{copy.project.lead.intro}"></p>
-                    	<p><a class="btn btn-primary btn-collapse" href="#" role="button" th:text="#{copy.viewdetails.button}"></a></p>
-                	</div>
-            	</div><!-- /.col-lg-4 -->
-            	<div class="col-lg-4 span4" >
-                	<a href="#">
-                    	<img class="img-circle"
-                        	 th:src="@{/images/me.jpg}"
-                        	 alt="Victor H Munguia" width="150" height="200" />
-                	</a>
-                	<h2>Victor H Munguia <small class="member-title">Project Lead</small></h2>
-                	<div class="span4 collapse-group">
-                    	<p class="collapse text-justify" th:text="#{copy.project.lead.intro}"></p>
-                    	<p><a class="btn btn-primary btn-collapse" href="#" role="button" th:text="#{copy.viewdetails.button}"></a></p>
-                	</div>
-            	</div><!-- /.col-lg-4 -->
-        	</div><!-- /.row -->
+    <!-- Main Jumbotron
+  ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
 
-        	<!-- START THE FEATURETTES -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1 class="text-center" th:text="#{copy.h1.text}"></h1>
+                    <p class="lead" th:text="#{copy.p.lead}"></p>
+                </div>
+            </div>
+        </div>
 
-        	<hr class="featurette-divider" />
+    </div><!-- ./container -->
 
-        	<div class="featurette">
-            	<img class="featurette-image pull-right" th:src="@{/images/browser-icon-chrome.png}" />
-            	<h2 class="featurette-heading">First featurette headling. <span class="muted">It'll blow your mind.</span></h2>
-            	<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.
-                	Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        	</div>
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
 
-        	<hr class="featurette-divider" />
+    <div class="container marketing">
 
-        	<div class="featurette">
-            	<img class="featurette-image pull-left" th:src="@{/images/browser-icon-firefox.png}" />
-            	<h2 class="featurette-heading">Oh yeah, it's that good. <span class="muted">See for yourself.</span></h2>
-            	<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-                	semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        	</div>
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4 span4">
+                <a href="/about">
+                    <img class="img-circle"
+                         src="/images/me.jpg"
+                         alt="Victor H Munguia" width="150" height="200" />
+                </a>
+                <h2>Victor H Munguia <small class="member-title">Project Lead</small></h2>
+                <div class="span4 collapse-group">
+                    <p class="collapse text-justify" th:text="#{copy.project.lead.intro}"></p>
+                    <p><a class="btn btn-primary btn-collapse" href="#" role="button" th:text="#{copy.viewdetails.button}"></a></p>
+                </div>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 span4">
+                <a href="/about">
+                    <img class="img-circle"
+                         src="/images/me.jpg"
+                         alt="Victor H Munguia" width="150" height="200" />
+                </a>
+                <h2>Victor H Munguia <small class="member-title">Project Lead</small></h2>
+                <div class="span4 collapse-group">
+                    <p class="collapse text-justify" th:text="#{copy.project.lead.intro}"></p>
+                    <p><a class="btn btn-primary btn-collapse" href="#" role="button" th:text="#{copy.viewdetails.button}"></a></p>
+                </div>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 span4" >
+                <a href="/about">
+                    <img class="img-circle"
+                         src="/images/me.jpg"
+                         alt="Victor H Munguia" width="150" height="200" />
+                </a>
+                <h2>Victor H Munguia <small class="member-title">Project Lead</small></h2>
+                <div class="span4 collapse-group">
+                    <p class="collapse text-justify" th:text="#{copy.project.lead.intro}"></p>
+                    <p><a class="btn btn-primary btn-collapse" href="#" role="button" th:text="#{copy.viewdetails.button}"></a></p>
+                </div>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
 
-        	<hr class="featurette-divider" />
+        <!-- START THE FEATURETTES -->
 
-        	<div class="featurette">
-            	<img class="featurette-image pull-right" th:src="@{/images/browser-icon-safari.png}" />
-            	<h2 class="featurette-heading">And lastly, this one. <span class="muted">Checkmate.</span></h2>
-            	<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-                	semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        	</div>
+        <hr class="featurette-divider" />
 
-        	<hr class="featurette-divider" />
+        <div class="featurette">
+            <img class="featurette-image pull-right" th:src="@{/images/browser-icon-chrome.png}" />
+            <h2 class="featurette-heading">First featurette headling. <span class="muted">It'll blow your mind.</span></h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
 
-        	<!-- /END THE FEATURETTES -->
-	        
-	        <!-- FOOTER -->
-        	<footer>
-            	<p>&copy; 2016 devopsfolks.com &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-        	</footer>
+        <hr class="featurette-divider" />
 
-    	</div><!-- /.container -->
+        <div class="featurette">
+            <img class="featurette-image pull-left" th:src="@{/images/browser-icon-firefox.png}" />
+            <h2 class="featurette-heading">Oh yeah, it's that good. <span class="muted">See for yourself.</span></h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+                semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
 
-		<!-- Bootstrap core JavaScript
-		================================================= -->
-		<!-- Place at the end of the document so the pages load faster -->
-		<div th:replace="common/header :: before-body-scripts" />
-	</body>
+        <hr class="featurette-divider" />
+
+        <div class="featurette">
+            <img class="featurette-image pull-right" th:src="@{/images/browser-icon-safari.png}" />
+            <h2 class="featurette-heading">And lastly, this one. <span class="muted">Checkmate.</span></h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+                semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <!-- /END THE FEATURETTES -->
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2016 devopsfolks.com &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+
+    </div><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <div th:replace="common/header :: before-body-scripts" />
+
+</body>
 </html>

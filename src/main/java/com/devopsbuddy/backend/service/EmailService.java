@@ -1,25 +1,23 @@
 package com.devopsbuddy.backend.service;
 
+import com.devopsbuddy.web.domain.frontend.FeedbackPojo;
 import org.springframework.mail.SimpleMailMessage;
-
-import com.devopsbuddy.web.domian.frontend.FeedbackPojo;
 
 /**
  * Contract for email service.
- * @author munga
- *
+ * Created by tedonema on 22/03/2016.
  */
 public interface EmailService {
 
-	/**
-	 * Send an email with the content in the feedback pojo.
-	 * @param feedback The feedback Pojo
-	 */
-	public void sendFeedbackEmail(FeedbackPojo feedback);
+    /**
+     * Sends an email with the content in the Feedback Pojo.
+     * @param feedbackPojo The feedback Pojo
+     */
+    public void sendFeedbackEmail(FeedbackPojo feedbackPojo);
 
-	/**
-	 * Send an email with the content of the Simple Mail Message object.
-	 * @param message The object containing the email content
-	 */
-	public void sendGenericEmailMessage(SimpleMailMessage message);
+    /**
+     * Sends an email with the content of the Simple Mail Message object.
+     * @param message The object containing the email content
+     */
+    public void sendGenericEmailMessage(SimpleMailMessage message);
 }
