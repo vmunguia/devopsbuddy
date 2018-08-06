@@ -31,18 +31,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/about/**",
             "/contact/**",
             "/error/**/*",
-            //"/console/**"
+            "/console/**"
     };
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-    	/*List<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
+    	List<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
     	
     	if (activeProfiles.contains("dev")) {
     		http.csrf().disable();
     		http.headers().frameOptions().disable();
     	}
-*/
+
         http
                 .authorizeRequests()
                 .antMatchers(PUBLIC_MATCHERS).permitAll()
