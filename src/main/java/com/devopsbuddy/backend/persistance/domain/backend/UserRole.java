@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,6 +23,10 @@ public class UserRole implements Serializable {
 	/** The Serial Version UID for serializable classes. */
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+
 	/**
 	 * Default constructor.
 	 */
@@ -33,15 +39,29 @@ public class UserRole implements Serializable {
 		this.role = role;
 	}
 
-	@Id
-	@ManyToOne(fetch=FetchType.LAZY)
+	//@Id
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="user_id")
 	private User user;
 
-	@Id
-	@ManyToOne(fetch=FetchType.LAZY)
+	//@Id
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="role_id")
 	private Role role;
+
+	/**
+	 * @return the id
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the user
@@ -77,16 +97,48 @@ public class UserRole implements Serializable {
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int result = user.hashCode();
-
-		result = prime * result + role.hashCode();
-
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
 		return result;
 	}
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+
+		if ((obj == null) || (getClass() != obj.getClass()))
+			return false;
+
+		UserRole other = (UserRole) obj;
+
+		if (id != other.id)
+			return false;
+
+		return true;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+/*
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = user.hashCode();
+
+		result = prime * result + role.hashCode();
+
+		return result;
+	}
+*/
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+/*
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -102,4 +154,6 @@ public class UserRole implements Serializable {
 
 		return role.equals(userRole.role);
 	}
+*/
+
 }

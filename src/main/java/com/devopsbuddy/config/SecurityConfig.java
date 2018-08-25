@@ -11,6 +11,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import com.devopsbuddy.backend.service.UserSecurityService;
+
 /**
  * Created by tedonema on 26/03/2016.
  */
@@ -20,6 +22,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private Environment env;
+
+	@Autowired
+	private UserSecurityService userSecurityService;
 
     /** Public URLs. */
     private static final String[] PUBLIC_MATCHERS = {
@@ -34,6 +39,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/console/**"
     };
 
+    /**
+     * 
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
     	List<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
@@ -54,11 +62,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout().permitAll();
     }
 
+    /**
+     * 
+     * @param auth
+     * @throws Exception
+     */
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+/*
         auth
                 .inMemoryAuthentication()
                 .withUser("user").password("pass")
                 .roles("USER");
+*/
+    	auth.userDetailsService(userSecurityService);
     }
 }

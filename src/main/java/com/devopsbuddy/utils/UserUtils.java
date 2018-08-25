@@ -7,12 +7,12 @@ import com.devopsbuddy.backend.persistance.domain.backend.User;
  * @author munga
  *
  */
-public class UsersUtils {
+public class UserUtils {
 
 	/**
 	 * Non instantiable.
 	 */
-	private UsersUtils() {
+	private UserUtils() {
 		throw new AssertionError("Non instantiable");
 	}
 
@@ -28,6 +28,7 @@ public class UsersUtils {
 		user.setEnabled(true);
 		user.setDescription("A basic user");
 		user.setProfileImageUrl("http://localhost:8080/images/me.jpg");
+		user.setStripeCustomerId("acct_1Cl8CZKzxovBhL1t");
 
 		return user;
 	}
