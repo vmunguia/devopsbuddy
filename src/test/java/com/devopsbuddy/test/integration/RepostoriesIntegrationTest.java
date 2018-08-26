@@ -1,7 +1,9 @@
 package com.devopsbuddy.test.integration;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -36,6 +38,9 @@ public class RepostoriesIntegrationTest {
 
 	@Autowired
 	private UserRepository userRepository;
+
+	@Rule
+	public TestName testName = new TestName();
 
 	/**
 	 * 
@@ -99,7 +104,10 @@ public class RepostoriesIntegrationTest {
 			roleRepository.save(ur.getRole());
 		}
 */
-		User basicUser = createUser();
+		String userName = testName.getMethodName();
+		String email = userName + "@devopsbuddy.com";
+
+		User basicUser = createUser(userName, email);
 
 		//basicUser = userRepository.save(basicUser);
 		User newlyCreatedUser = userRepository.findOne(basicUser.getId());
@@ -120,7 +128,10 @@ public class RepostoriesIntegrationTest {
 	 * @throws Exception
 	 */
 	public void testDeleteUser() throws Exception {
-		User basicUser = createUser();
+		String userName = testName.getMethodName();
+		String email = userName + "@devopsbuddy.com";
+
+		User basicUser = createUser(userName, email);
 		userRepository.delete(basicUser.getId());
 	}
 
@@ -213,11 +224,11 @@ public class RepostoriesIntegrationTest {
 	 * 
 	 * @return
 	 */
-	private User createUser() {
+	private User createUser(String username, String email) {
 		Plan basicPlan = createPlan(PlansEnum.BASIC);
 		planRepository.save(basicPlan);
 
-		User basicUser = UserUtils.createBasicUser();
+		User basicUser = UserUtils.createBasicUser(username, email);
 		basicUser.setPlan(basicPlan);
 
 		Role basicRole = createRole(RolesEnum.BASIC);
