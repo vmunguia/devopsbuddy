@@ -79,6 +79,13 @@ public class User implements Serializable, UserDetails {
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Set<UserRole> userRoles = new HashSet<>();
 
+	@OneToMany(
+			cascade = CascadeType.ALL,
+			fetch = FetchType.LAZY,
+			mappedBy = "user"
+	)
+	private Set<PasswordResetToken> passwordResetTokens = new HashSet<>();
+
 	/**
 	 * @return the id
 	 */
@@ -332,5 +339,19 @@ public class User implements Serializable, UserDetails {
 	@Override
 	public boolean isCredentialsNonExpired() {
 		return true;
+	}
+
+	/**
+	 * @return the passwordResetTokens
+	 */
+	public Set<PasswordResetToken> getPasswordResetTokens() {
+		return passwordResetTokens;
+	}
+
+	/**
+	 * @param passwordResetTokens the passwordResetTokens to set
+	 */
+	public void setPasswordResetTokens(Set<PasswordResetToken> passwordResetTokens) {
+		this.passwordResetTokens = passwordResetTokens;
 	}
 }

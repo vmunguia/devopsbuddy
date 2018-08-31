@@ -5,7 +5,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -14,30 +14,26 @@ import com.devopsbuddy.backend.persistance.domain.backend.Plan;
 import com.devopsbuddy.backend.persistance.domain.backend.Role;
 import com.devopsbuddy.backend.persistance.domain.backend.User;
 import com.devopsbuddy.backend.persistance.domain.backend.UserRole;
-import com.devopsbuddy.backend.persistance.repositories.PlanRepository;
-import com.devopsbuddy.backend.persistance.repositories.RoleRepository;
-import com.devopsbuddy.backend.persistance.repositories.UserRepository;
+//import com.devopsbuddy.backend.persistance.repositories.PlanRepository;
+//import com.devopsbuddy.backend.persistance.repositories.RoleRepository;
+//import com.devopsbuddy.backend.persistance.repositories.UserRepository;
 import com.devopsbuddy.enums.PlansEnum;
 import com.devopsbuddy.enums.RolesEnum;
-import com.devopsbuddy.utils.UserUtils;
+//import com.devopsbuddy.utils.UserUtils;
 
-import java.util.HashSet;
+//import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.Assert;
 
+/**
+ * 
+ * @author munga
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = DevOpsBuddyApplication.class)
-public class RepostoriesIntegrationTest {
-
-	@Autowired
-	private PlanRepository planRepository;
-
-	@Autowired
-	private RoleRepository roleRepository;
-
-	@Autowired
-	private UserRepository userRepository;
+public class UserIntegrationTest extends AbstractIntegrationTest {
 
 	@Rule
 	public TestName testName = new TestName();
@@ -201,46 +197,4 @@ public class RepostoriesIntegrationTest {
 		return user;
 	}
 */
-
-	/**
-	 * 
-	 * @param plansEnum
-	 * @return
-	 */
-	private Plan createPlan(PlansEnum plansEnum) {
-		return new Plan(plansEnum);
-	}
-
-	/**
-	 * 
-	 * @param rolesEnum
-	 * @return
-	 */
-	private Role createRole(RolesEnum rolesEnum) {
-		return new Role(rolesEnum);
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	private User createUser(String username, String email) {
-		Plan basicPlan = createPlan(PlansEnum.BASIC);
-		planRepository.save(basicPlan);
-
-		User basicUser = UserUtils.createBasicUser(username, email);
-		basicUser.setPlan(basicPlan);
-
-		Role basicRole = createRole(RolesEnum.BASIC);
-		roleRepository.save(basicRole);
-
-		Set<UserRole> userRoles = new HashSet<>();
-		UserRole userRole = new UserRole(basicUser, basicRole);
-		userRoles.add(userRole);
-	
-		basicUser.getUserRoles().addAll(userRoles);
-		basicUser = userRepository.save(basicUser);
-
-		return basicUser;
-	}
 }
